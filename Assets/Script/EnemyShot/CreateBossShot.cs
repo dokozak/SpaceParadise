@@ -29,6 +29,7 @@ public class CreateBossShot : MonoBehaviour
     private void Update()
     {
 
+        waitTime = GetComponentInParent<InformationEnemy>().shotTime;
         //Comprobe if this Create shot is enable
         if (!isEnable)
             return;

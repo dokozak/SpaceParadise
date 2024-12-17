@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class BlueLooking : MonoBehaviour
 {
-    private void Update()
+    //information of enemy
+    InformationEnemy information;
+    //The rotatio of the ship
+    private int rotation = 180;
+    //Comprobe the direction
+    private bool isRight = true;
+    //Angle the ship
+    private float angle;
+    // Start is called before the first frame update
+    void Start()
     {
-        looking();
+        //Get the information enemy
+        information = GetComponent<InformationEnemy>();
+
     }
-    void looking()
+
+    // Update is called once per frame
+    void Update()
     {
-        // Get the mouse position
-        Vector3 MousePosition = Input.mousePosition;
-        MousePosition.z = Camera.main.transform.position.z;
-
-        // Convert mouse position to world coordinates
-        Vector3 direction = Camera.main.ScreenToWorldPoint(MousePosition) - transform.position;
-        direction.z = 0;
-
-        // Rotate the direction to mouse
-        transform.right = direction;
-        transform.Rotate(0, 0, 90);
+        //Rotate the ship and move this
+        transform.Rotate(0, 0, rotation * Time.deltaTime);
     }
 }

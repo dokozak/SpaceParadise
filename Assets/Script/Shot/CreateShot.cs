@@ -25,7 +25,7 @@ public class CreateShot : MonoBehaviour
     //The game object we goint to create
     private GameObject prefav;
     //Wait time of the new shot
-    private float waitTime = InformationPowerUpPlayer.ShotCreateTime();
+    private float waitTime = InformationLevelOfShotting.Shooting();
     //Comprobe if can create a shot
     public bool isEnable;
 
@@ -33,11 +33,13 @@ public class CreateShot : MonoBehaviour
     {
         
         //Comprobe if this Create shot is enable
-        if (!isEnable)
+        if (!isEnable || !InformationShot.isShooting)
             return;
         //If the player use the mouse he shooting a shot
-        if (Input.GetKey(KeyCode.Mouse0) && isShooting)
+        if (Input.GetKey(KeyCode.Mouse0) && isShooting && Time.timeScale!=0)
         {
+            //Comprove the time
+            waitTime = InformationLevelOfShotting.Shooting();
             //Stop shooting
             isShooting = false;
             StartCoroutine(newShooting());
@@ -52,6 +54,7 @@ public class CreateShot : MonoBehaviour
                 //Create a normal shot
                 createShot();
             }
+
             //Create the type of shot
             prefav.GetComponent<InformationShot>().type = typeOfShot;
             prefav.GetComponent<InformationShot>().angleZ = transform.parent.rotation.eulerAngles.z;

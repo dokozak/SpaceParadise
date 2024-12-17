@@ -17,7 +17,7 @@ public class InformationPowerUpPlayer : MonoBehaviour
     public static int emergencyButtonLevel = 1;
     //Chance for the player to take double damage
     public static int luckyLevel = 1;
-    //Increases healing of power up
+    //Increases the power up
     public static int powerUpLevel = 1;
     //Time it takes to fix the barrel
     public static int fixBarrelLevel = 1;
@@ -46,14 +46,36 @@ public class InformationPowerUpPlayer : MonoBehaviour
     
     }
 
-    public static float ShotVelocitySpeed()
+    public static float ShotVelocitySpeed(int value)
     {
-        return 0.125f + shotVelocityLevel * 0.025f;
+        return 0.125f + shotVelocityLevel * 0.010f + value * 0.0025f;
     }
 
-    public static float ShotCreateTime()
+    public static float ShotCreateTime(int value)
     {
-        return 0.30f - shotUpLevel * 0.05f;
+        
+
+        return 0.30f - shotUpLevel * 0.02f + value * 0.005f;
+    }
+
+    public static int emergencyButton()
+    {
+        return emergencyButtonLevel;
+    }
+
+    public static int powerUp()
+    {
+        return powerUpLevel;
+    }
+
+    public static float fixBarrel()
+    {
+       return 0.8f - fixBarrelLevel * 0.03f;
+    }
+
+    public static int barrel()
+    {
+        return barrelLevel;
     }
 
 }

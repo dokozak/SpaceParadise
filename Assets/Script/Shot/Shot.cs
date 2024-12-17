@@ -6,14 +6,21 @@ public class Shot : MonoBehaviour
 {
     //All infomation of the shot
     private InformationShot information;
+    //Information of the renderer
+    private Renderer renderer;
+    //Movement of shot
+    private const int NOTMOVEMENT = 0;
+    private const float LATERALMOVEMENT = 0.7f;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Get the rendered
+        renderer = GetComponent<Renderer>();
         //Get the information
         information = GetComponent<InformationShot>();
         //Get the velocity level
-        information.velocity = InformationPowerUpPlayer.ShotVelocitySpeed();
+        information.velocity = InformationLevelOfShotting.ShotSpeed();
         //Movement of the shot
         switch (information.type)
         {
@@ -24,22 +31,22 @@ public class Shot : MonoBehaviour
                 angle(0, information.movement, information.angleZ);
                 break;
             case CreateShot.SHOTlEFT:
-                angle(-information.movement, 0, information.angleZ);
+                angle(-information.movement, NOTMOVEMENT, information.angleZ);
                 break;
             case CreateShot.SHOTRIGHT:
-                angle(information.movement, 0, information.angleZ);
+                angle(information.movement, NOTMOVEMENT, information.angleZ);
                 break;
             case CreateShot.SHOTUPRIGHT:
-                angle(information.movement * 0.7f, information.movement * 0.7f, information.angleZ);
+                angle(information.movement * LATERALMOVEMENT, information.movement * LATERALMOVEMENT, information.angleZ);
                 break;
             case CreateShot.SHOTUPLEFT:
-                angle(-information.movement * 0.7f, information.movement * 0.7f, information.angleZ);
+                angle(-information.movement * LATERALMOVEMENT, information.movement * LATERALMOVEMENT, information.angleZ);
                 break;
             case CreateShot.SHOTDOWNLEFT:
-                angle(-information.movement * 0.7f, -information.movement * 0.7f, information.angleZ);
+                angle(-information.movement * LATERALMOVEMENT, -information.movement * LATERALMOVEMENT, information.angleZ);
                 break;
             case CreateShot.SHOTDOWNRIGHT:
-                angle(information.movement * 0.7f, -information.movement * 0.7f, information.angleZ);
+                angle(information.movement * LATERALMOVEMENT, -information.movement * LATERALMOVEMENT, information.angleZ);
                 break;
         }
 
@@ -48,12 +55,8 @@ public class Shot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Calcule the time life of the shot
-        information.timeLife += Time.deltaTime;
-
-
-        //Transformation of the shot
-        if (information.timeLife > 5)
+        //Comprove if is visible
+        if (!renderer.isVisible)
         {
             //End of life of the shot
             Destroy(this.gameObject);

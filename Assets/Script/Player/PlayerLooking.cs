@@ -6,6 +6,7 @@ public class PlayerLooking : MonoBehaviour
 {
     private void Update()
     {
+        if(Time.timeScale!= 0)
         looking();
     }
     void looking()
@@ -19,7 +20,8 @@ public class PlayerLooking : MonoBehaviour
         direction.z = 0;
 
         // Rotate the direction to mouse
-        transform.right = direction; 
+        transform.right = direction;
         transform.Rotate(0, 0, -90);
+
     }
 }

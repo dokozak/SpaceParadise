@@ -6,56 +6,22 @@ public class MoveRedShip : MonoBehaviour
 {
     //information of enemy
     InformationEnemy information;
-    //The rotatio of the ship
-    private int rotation = 50;
-    //Comprobe the direction
-    private bool isRight = true;
-    //Angle the ship
-    private float angle;
-    //Movement of the ship
-    int movement;
+    //Speed
+    private float speed = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
-       //Get the information enemy
-       information = GetComponent<InformationEnemy>();
-       information.movementX = 1;
-       
+        //Get the information enemy
+        information = GetComponent<InformationEnemy>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isRight)
-        {
-            //The next rotation
-            if(angle > 30) 
-            {
-            rotation = -50;
-            isRight = false;
-            }
-            
+        transform.position = Vector3.Lerp(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, speed * Time.deltaTime);
 
-        }
-        else
-        {
-            //The next rotation
-            if (angle < -30)
-            {
-                rotation = 50;
-                isRight = true;
-            }
-        }
-        //Angle of the ship
-        angle += rotation * Time.deltaTime;
-        //Rotate the ship and move this
-        transform.Rotate(0,  0, rotation * Time.deltaTime);
-        transform.position = new Vector3(transform.position.x + (information.movementX * Time.deltaTime), transform.position.y + (information.movementY * Time.deltaTime), transform.position.z);
     }
 
-    //Movement of the red ship
-    private void ShipMovement()
-    {
-        
-    }
+
 }

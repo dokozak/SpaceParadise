@@ -43,8 +43,8 @@ public class EnemyCollision : MonoBehaviour
         if (information.life <= 0)
         {
             if (!isDie)
-            {   isDie = true;
-                InformationCreateEnemy.enemyLive--;
+            {   
+                isDie = true;
             }
             
             Destroy(gameObject);

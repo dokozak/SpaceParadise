@@ -6,8 +6,6 @@ public class InformationShot : MonoBehaviour
     public int damage = 0;
     //If is lucky the damage shot does quintuple damage
     public bool isLucky = false;
-    //Get the time of the shot is shooted
-    public float timeLife = 0;
     //Type of the shot
     public int type = 0;
     //Speed
@@ -20,5 +18,6 @@ public class InformationShot : MonoBehaviour
     public float movementY = 0;
     //Angle to the ship
     public float angleZ = 0;
-
+    //Comprobe if the shot can shooting
+    public static bool isShooting = true;
 }

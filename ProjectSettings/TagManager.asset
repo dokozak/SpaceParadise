@@ -8,6 +8,20 @@ TagManager:
   - Shot
   - Asteroid
   - EnemyShot
+  - SlowdownShot
+  - MovementBossShip1
+  - PointBossShip1
+  - MoreShooting
+  - MoreHealing
+  - MoreShotSpeedUp
+  - MoreBarrelHeating
+  - MoreLife
+  - PowerUpPositions
+  - PowerUpButton
+  - OutSide
+  - Chess
+  - ChildPosition
+  - FatherPosition
   layers:
   - Default
   - TransparentFX

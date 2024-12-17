@@ -6,10 +6,13 @@ public class EnemyShot : MonoBehaviour
 {
     //All infomation of the shot
     private InformationEnemyShot information;
+    //
+    Renderer renderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        renderer = GetComponent<Renderer>();
         //Get the information
         information = GetComponent<InformationEnemyShot>();
         //Movement of the shot
@@ -46,12 +49,9 @@ public class EnemyShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Calcule the time life of the shot
-        information.timeLife += Time.deltaTime;
-
 
         //Transformation of the shot
-        if (information.timeLife > 5)
+        if (!renderer.isVisible)
         {
             //End of life of the shot
             Destroy(this.gameObject);

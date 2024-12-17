@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Stadistics : MonoBehaviour 
 {
-
     //Times who the player die
-    private int dieTimes { get; set; } = 0;
+    public static int dieTimes = 0;
     //Enemies who has been killer with the player
-    private int enemiesKilled { get; set; } = 0;
+    public static int enemiesKilled = 0;
     //Bosses who has been killer with the player
-    private int bossesDeleted { get; set; } = 0;
-    //Record of the plater survive
-    private int recordOfTimeSurvive { get; set; } = 0;
-    //Victories who have the player
-    private int victories { get; set; } = 0;
-    //Count of the money who the player get all game
-    private int maxMoney { get; set; } = 0;
+    public static int bossesDeleted = 0;
+    //Record of the player survive the waves
+    public static int recordOfTimeWaves= 0;
+    //Enemies who has been killer with the player in this game
+    public static int enemiesKilledInThisGame = 0;
+    //Bosses who has been killer with the player in this game
+    public static int bossesDeletedInThisGame = 0;
+    //Record of the player survive the waves in this game
+    public static int wavesInThisGame = 0;
 
 }

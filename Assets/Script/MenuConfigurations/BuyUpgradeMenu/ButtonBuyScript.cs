@@ -7,6 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class ButtonBuyScript : MonoBehaviour
 {
+    IOInformation information;
     //Types of button
     private const int BUTTONMORESHOT = 0;
     private const int BUTTONMORELUCKY = 1;
@@ -26,6 +27,10 @@ public class ButtonBuyScript : MonoBehaviour
     //The time of the text has
     private const int TIMEINFORMATION = 1;
 
+    private void Start()
+    {
+        information = GetComponent<IOInformation>();
+    }
     public void BUTTON_BuyUpgrades(int type)
     {
         //Change the shot
@@ -62,6 +67,7 @@ public class ButtonBuyScript : MonoBehaviour
                 MoreShotSpeed();
                 break;
         }
+        information.SaveGame();
     }
 
     private void MoreShot()

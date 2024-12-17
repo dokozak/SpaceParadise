@@ -4,24 +4,41 @@ using UnityEngine;
 
 public class ControleTheEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Default values
-        InformationCreateEnemy.waves = 0; 
-        InformationCreateEnemy.enemyLive = 0;
-        InformationCreateEnemy.enemyToMade = 0;
-    }
+
+    private bool isNewEnemy = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (InformationCreateEnemy.enemyLive != 0)
-            return;
+        if(InformationCreateEnemy.bossLife != 0 && !isNewEnemy)
+        {
+            isNewEnemy = true;
+            StartCoroutine(createEnemy());
+        }
 
-        //Create any random amount of enemies
-        InformationCreateEnemy.enemyLive = Random.Range((InformationCreateEnemy.waves / 6) + 3, (InformationCreateEnemy.waves / 3) + 5);
-        InformationCreateEnemy.enemyToMade = InformationCreateEnemy.enemyLive;
+        if (InformationCreateEnemy.enemyLive != 0 || InformationCreateEnemy.bossLife != 0)
+            return;
         InformationCreateEnemy.waves++;
+        if (InformationCreateEnemy.waves % 5 != 0)
+        {
+            //Create any random amount of enemies
+            InformationCreateEnemy.enemyLive = Random.Range((InformationCreateEnemy.waves / 6) + 3, (InformationCreateEnemy.waves / 3) + 5);
+            InformationCreateEnemy.enemyToMade = InformationCreateEnemy.enemyLive;
+        }
+        else
+        {
+            InformationCreateEnemy.bossToMade++;
+            InformationCreateEnemy.bossLife++;
+        }
+        
+    }
+
+    private IEnumerator createEnemy()
+    {
+        InformationCreateEnemy.enemyToMade++;
+        InformationCreateEnemy.enemyLive++;
+        yield return new WaitForSeconds(Random.Range(5, 30));
+        isNewEnemy = false;
+
     }
 }

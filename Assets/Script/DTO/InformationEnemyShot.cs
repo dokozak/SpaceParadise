@@ -6,8 +6,6 @@ public class InformationEnemyShot : MonoBehaviour
 {
     //Damage who have the shot
     public int damage = 0;
-    //Get the time of the shot is shooted
-    public float timeLife = 0;
     //Type of the shot
     public int type = 0;
     //Speed
