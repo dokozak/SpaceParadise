@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 public class InformationPowerUpPlayer : MonoBehaviour
 {
     //Money who have the player
-    public static int moneyActually = 99;
+    public static int moneyActually = 0;
     //Level of velocity of the shot
     public static int shotVelocityLevel = 1;
     //Level of velocity who the player shooting next time

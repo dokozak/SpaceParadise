@@ -23,7 +23,7 @@ public class ButtonBuyScript : MonoBehaviour
     //Canva who has been add the float text
     public Canvas canvas;
     //Text of the information to player
-    private const string TEXTINFORMATION = "You not have money";
+    private const string TEXTINFORMATION = "You not have any ruby";
     //The time of the text has
     private const int TIMEINFORMATION = 1;
 

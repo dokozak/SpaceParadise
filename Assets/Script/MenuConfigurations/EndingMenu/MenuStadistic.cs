@@ -24,7 +24,7 @@ public class MenuStadistic : MonoBehaviour
         Stadistics.enemiesKilled += Stadistics.enemiesKilledInThisGame;
 
         if(InformationCreateEnemy.levelOfDificult == 0)
-            textRuby.text = "You won´n any rubies";
+            textRuby.text = "You have not won any ruby";
         else     
             textRuby.text = "You have won " + InformationCreateEnemy.levelOfDificult + ((InformationCreateEnemy.levelOfDificult == 1) ?  " a ruby":" rubies");
 
