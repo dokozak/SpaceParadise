@@ -7,7 +7,7 @@ public class OnDeleteEnemy : MonoBehaviour
 
     private InformationEnemy information;
     private string ruteOfPowerUp = "PowerUp/PowerUp";
-    private const int PROBABILITY = 5;
+    private const int PROBABILITY = 10;
     private void Start()
     {
         information  = GetComponent<InformationEnemy>();  

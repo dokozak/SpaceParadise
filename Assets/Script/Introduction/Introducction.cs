@@ -181,7 +181,7 @@ public class Introducction : MonoBehaviour
     }
     IEnumerator ending()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         InformationPlayer.theGameEnd = true;
     }
 }
