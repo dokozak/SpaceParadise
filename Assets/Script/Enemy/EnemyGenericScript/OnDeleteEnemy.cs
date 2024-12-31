@@ -5,22 +5,28 @@ using UnityEngine;
 public class OnDeleteEnemy : MonoBehaviour
 {
 
-    private InformationEnemy information;
     private string ruteOfPowerUp = "PowerUp/PowerUp";
-    private const int PROBABILITY = 10;
-    private void Start()
-    {
-        information  = GetComponent<InformationEnemy>();  
-        
-    }
+    private string ruteOfExplosion = "Explosion/Explosions";
+    private const int PROBABILITY = 20;
+
     private void OnDestroy()
     {
-        if (InformationPlayer.theGameEnd)
-            return;
-
-        if (Random.Range(0, 101) <= PROBABILITY)
-        Instantiate(Resources.Load(ruteOfPowerUp), transform.position, Quaternion.identity);
         InformationCreateEnemy.enemyLive--;
         Stadistics.enemiesKilledInThisGame++;
+        if (InformationPlayer.theGameEnd)
+        {
+            
+            return;
+        }else if (InformationCreateEnemy.bossLife != 0)
+        {
+            Instantiate(Resources.Load(ruteOfExplosion), transform.position, Quaternion.identity);
+            return;
+        }
+
+
+        Instantiate(Resources.Load(ruteOfExplosion), transform.position, Quaternion.identity);
+        if (Random.Range(0, 101) <= PROBABILITY)
+        Instantiate(Resources.Load(ruteOfPowerUp), transform.position, Quaternion.identity);
+       
     }
 }

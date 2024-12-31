@@ -9,19 +9,28 @@ public class ShipBoss1Movement : MonoBehaviour
     private float time = 0;
     private GameObject[] movementPoint;
     private Vector3 thisPosition;
-
+    private int value;
     private void Start()
     {
         movementPoint = GameObject.FindGameObjectsWithTag("MovementBossShip1");
         newgameObject = GameObject.FindGameObjectWithTag("PointBossShip1");
         thisPosition = gameObject.transform.position;
+        value = -1;
     }
     // Update is called once per frame
     void Update()
     {
+        
         if(time> 4)
         {
-            newgameObject = movementPoint[UnityEngine.Random.Range(0, movementPoint.Length)];
+            int nextMovement = value;
+            while (nextMovement == value)
+            {
+                nextMovement = UnityEngine.Random.Range(0, movementPoint.Length);
+                
+            }
+            value = nextMovement;
+            newgameObject = movementPoint[value];
             thisPosition = gameObject.transform.position;
             time = 0;
         }

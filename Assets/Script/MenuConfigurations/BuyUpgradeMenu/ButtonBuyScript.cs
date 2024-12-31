@@ -283,6 +283,10 @@ public class ButtonBuyScript : MonoBehaviour
         }
     }
 
+    public void getMaxRubies()
+    {
+        InformationPowerUpPlayer.moneyActually = 99;
+    }
     public void ShowFloatingText(string text, float duration)
     {
         // instancie of prefab

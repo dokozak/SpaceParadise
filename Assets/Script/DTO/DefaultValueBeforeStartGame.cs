@@ -17,6 +17,9 @@ public class DefaultValueBeforeStartGame : MonoBehaviour
         Time.timeScale = 1f;
         InformationLevelOfShotting.MoreShooting = 0;
         InformationLevelOfShotting.MoreShotSpeed = 0;
+        Stadistics.enemiesKilledInThisGame = 0;
+        Stadistics.bossesDeletedInThisGame = 0;
+        Stadistics.wavesInThisGame = 0;
 
         Destroy(gameObject);
     }

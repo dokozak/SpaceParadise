@@ -28,6 +28,20 @@ public class CreateShot : MonoBehaviour
     private float waitTime = InformationLevelOfShotting.Shooting();
     //Comprobe if can create a shot
     public bool isEnable;
+    //AudioSource
+    private AudioSource audio;
+
+    private void Start()
+    {
+        try
+        {
+            audio = GetComponent<AudioSource>();
+        }
+        catch (System.Exception) { 
+        
+        }
+       
+    }
 
     private void Update()
     {
@@ -58,6 +72,11 @@ public class CreateShot : MonoBehaviour
             //Create the type of shot
             prefav.GetComponent<InformationShot>().type = typeOfShot;
             prefav.GetComponent<InformationShot>().angleZ = transform.parent.rotation.eulerAngles.z;
+            //Play the audio
+            if (audio != null && !audio.isPlaying)
+            {
+                audio.Play();
+            }
         }   
     }
 
@@ -73,6 +92,7 @@ public class CreateShot : MonoBehaviour
     {
         //Create the shot
         prefav = Instantiate(Resources.Load<GameObject>(SHOTNAME), this.transform.position, Quaternion.identity);
+
 
     }
 

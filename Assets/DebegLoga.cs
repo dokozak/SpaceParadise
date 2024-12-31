@@ -13,6 +13,6 @@ public class DebegLoga : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(InformationCreateEnemy.enemyLive + ": Enemy life, " + InformationCreateEnemy.enemyToMade + ": Enemy to made " + InformationCreateEnemy.waves + ": Wave"); 
+        Debug.Log(InformationCreateEnemy.enemyLive + ": Enemy life, " + InformationCreateEnemy.enemyToMade + ": Enemy to made " + InformationCreateEnemy.bossLife + ": Boss to life"+ InformationCreateEnemy.waves + ": Wave"); 
     }
 }

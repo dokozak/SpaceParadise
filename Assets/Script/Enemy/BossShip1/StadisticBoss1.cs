@@ -9,7 +9,7 @@ public class StadisticBoss1 : MonoBehaviour
     void Start()
     {
         information = GetComponent<InformationEnemy>();
-        information.life = 150 + InformationCreateEnemy.levelOfDificult * 20;
+        information.life = 100 + InformationCreateEnemy.levelOfDificult * 30;
 
         for (int i = 0; i < 3; i++)
         {

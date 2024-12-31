@@ -9,8 +9,7 @@ public class Introducction : MonoBehaviour
     private int status = 0;
     private float time = 0;
     public GameObject firstEnemy, heatingEnemy, enemyShot, leftCreateShot;
-    private ArrayList list = new ArrayList();
-    public Transform positionOfShot;
+    private Vector3 positionOfShot;
     public GameObject player;
     public InformationPlayer InformationPlayer;
     public PowerUpButtomIntroduction powerUp;
@@ -150,11 +149,13 @@ public class Introducction : MonoBehaviour
 
     private void emergencyButton()
     {
+        positionOfShot = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, Camera.main.nearClipPlane));
+
         if (time == 0)
         {
             textTutorial.text = "Were you touching a enemy shot you lose life, try to don´t touch more enemy shot";
             for (int y = 0; y < 100; y++) {
-                list.Add(Instantiate(leftCreateShot, new Vector3(positionOfShot.position.x, positionOfShot.position.y-y, positionOfShot.position.z), Quaternion.identity));
+                Instantiate(leftCreateShot, new Vector3(positionOfShot.x, positionOfShot.y-y, positionOfShot.z), Quaternion.identity);
             }
      
         }

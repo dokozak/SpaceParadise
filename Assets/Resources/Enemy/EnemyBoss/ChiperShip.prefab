@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3179106875891991023}
   - component: {fileID: 8128242705917108456}
   - component: {fileID: 2431472571398027914}
+  - component: {fileID: 6135356009858393276}
   m_Layer: 0
   m_Name: Gun1
   m_TagString: Enemy
@@ -192,6 +193,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab39d66ca33410241954cd38b30ad426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6135356009858393276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59405297554481980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1a629229762d84898a5d5f47293eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &349079050448190233
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +313,7 @@ GameObject:
   - component: {fileID: 7499096447413898138}
   - component: {fileID: 4358252089326091924}
   - component: {fileID: 5776515304869555348}
+  - component: {fileID: 1920079195527464782}
   m_Layer: 0
   m_Name: Gun2
   m_TagString: Enemy
@@ -478,6 +492,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab39d66ca33410241954cd38b30ad426, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1920079195527464782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796204637523061936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1a629229762d84898a5d5f47293eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &990711408069354100
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +565,7 @@ GameObject:
   - component: {fileID: 6724585383718063538}
   - component: {fileID: 6606368776393627968}
   - component: {fileID: 2666499025678005939}
+  - component: {fileID: 3721157897413237191}
   m_Layer: 0
   m_Name: Gun3
   m_TagString: Enemy
@@ -715,6 +742,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab39d66ca33410241954cd38b30ad426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3721157897413237191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3990595419827938939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af1a629229762d84898a5d5f47293eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4997091249347634769
@@ -1117,7 +1156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  life: 150
+  life: 100
   shotTime: 0.05
   movementX: 0
   movementY: 0

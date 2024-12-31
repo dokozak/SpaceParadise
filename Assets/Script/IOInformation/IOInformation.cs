@@ -1,6 +1,7 @@
 
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IOInformation : MonoBehaviour
 {
@@ -38,5 +39,34 @@ public class IOInformation : MonoBehaviour
             Stadistics.recordOfTimeWaves = dataGame.recordOfTimeWaves;
 
         }
+        else
+        {
+            InformationPowerUpPlayer.moneyActually = 0;
+            InformationPowerUpPlayer.shotVelocityLevel = 1;
+            InformationPowerUpPlayer.shotUpLevel = 1;
+            InformationPowerUpPlayer.lifeLevel = 1;
+            InformationPowerUpPlayer.emergencyButtonLevel = 1;
+            InformationPowerUpPlayer.luckyLevel = 1;
+            InformationPowerUpPlayer.powerUpLevel = 1;
+            InformationPowerUpPlayer.fixBarrelLevel = 1;
+            InformationPowerUpPlayer.barrelLevel = 1;
+            InformationPowerUpPlayer.islaserBeam = false;
+            InformationPowerUpPlayer.isChangeLaser = false;
+            Stadistics.dieTimes = 0;
+            Stadistics.enemiesKilled = 0;
+            Stadistics.bossesDeleted = 0;
+            Stadistics.recordOfTimeWaves = 0;
+        }
+    }
+
+    public void DeleteData()
+    {
+        string file = Application.persistentDataPath + "/GameData.json";
+        if (File.Exists(file))
+        {
+            File.Delete(file);
+        }
+        SceneManager.LoadScene("ChargeValues");
+
     }
 }
