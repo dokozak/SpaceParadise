@@ -5,7 +5,7 @@ using UnityEngine;
 public class InformationCreateEnemy : MonoBehaviour
 {
     //Comprove the wave
-    public static int waves = 4;
+    public static int waves = 0;
     //Check for missing enemies
     public static int enemyToMade = 0;
     //The enemy live
